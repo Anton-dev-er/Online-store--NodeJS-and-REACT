@@ -19,7 +19,7 @@ const BasketItem = sequelize.define('basket_item', {
 const Good = sequelize.define('good', {
   id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
   title: {type: DataTypes.STRING, unique: true, allowNull: false},
-  description: {type: DataTypes.STRING, unique: true, allowNull: false},
+  description: {type: DataTypes.STRING, allowNull: false},
   price: {type: DataTypes.INTEGER, allowNull: false},
   is_published: {type: DataTypes.BOOLEAN, allowNull: false, defaultValue: true },
   photo: {type: DataTypes.STRING, allowNull: false},
@@ -43,9 +43,9 @@ const Category = sequelize.define('category', {
   title: {type: DataTypes.STRING, allowNull: false},
 })
 
-const Gender = sequelize.define('category', {
+const Gender = sequelize.define('gender', {
   id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-  title: {type: DataTypes.STRING, allowNull: false},
+  title: {type: DataTypes.STRING, unique: true, allowNull: false},
   photo: {type: DataTypes.STRING, allowNull: false},
 })
 
